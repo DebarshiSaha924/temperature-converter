@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon"  type="image/png" sizes="32x32" href="temp.png">
+    <title>Temperature Converter</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <p id="currentDateTime"></p>
+
+    <script>
+        // Function to display the current date and time
+        function updateDateTime() {
+            const now = new Date();
+            const date = now.toLocaleDateString();
+            const time = now.toLocaleTimeString();
+
+            const dateTimeElement = document.getElementById("currentDateTime");
+            dateTimeElement.textContent = ` ${date} ${time}`;
+        }
+
+        // Update the date and time every second
+        setInterval(updateDateTime, 1000);
+    </script>
+
+    <div class="container">
+        <h1>Temperature Converter</h1>
+        <div class="form-group">
+            <label for="degrees">Degrees:</label>
+            <input type="number" id="degrees" name="degrees" value="" />
+        </div>
+        <div class="form-group">
+            <label for="type">Convert to Type:</label>
+            <select id="type" name="type">
+                <option value="fahrenheit">Fahrenheit</option>
+                <option value="celsius">Celsius</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <button id="convert">Convert</button>
+        </div>
+        <div class="result">
+            <p>Result: <span id="result-value">0</span></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+    <footer class="foot">
+        <p>&copy; 2023 Temperature Converter by Debarshi Saha</p>
+    </footer>
+</body>
+
+</html>
