@@ -9,9 +9,11 @@ convertButton.addEventListener('click', () => {
     let result;
 
     if (type === 'fahrenheit') {
-        result = degrees * 9 / 5 + 32
-    } else {
+        result = degrees * 9 / 5 + 32;
+    } else if (type === 'celsius') {
         result = (degrees - 32) * 5 / 9;
+    } else if (type === 'kelvin') {
+        result = degrees + 273.15;
     }
 
     resultValueSpan.textContent = result.toFixed(4) + '° ' + type.toUpperCase();
